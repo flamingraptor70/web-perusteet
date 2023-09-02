@@ -1,28 +1,20 @@
-"use strict";
+'use strict';
 
-const numbers = [];
+let numbers = []; //Define an empty array to store the numbers entered by the user.
+let more = true;
 
-while(jatka){
-  const number = promt("Enter series of numberss");
-  if (number === "stop"){
-    alert("stopping the program");
-    jatka = false;
+const answerElement = document.getElementById('vastaus'); //If the current number is even, display it on the HTML document.
+
+while (more) {
+  const givenNumber = prompt('Give a number, or done to stop');
+  if (givenNumber === 'done') {
+    more = false;
   }
-  numbers.push(number);
-}
-
-console.log(numbers)
-
-document.getElementById("kohde").innerHTML = "Parilliset: ";
-const parilliset = [];
-for (const number of numbers){
-  if(number%2 ===0){
-    parilliset.push(number);
+  numbers.push(parseInt(givenNumber));
+} //Use a loop (e.g., while or do...while) to prompt the user for numbers and add them to the array until the user decides to stop
+for (const number of numbers) {
+  if (number % 2 === 0) /*Inside the loop, check if the current number is even using the modulo operator */{
+    answerElement.innerText += number + ', ';
   }
-}
+} //Use the for...of loop to iterate over the entered values stored in the array.
 
-if(parilliset.lenght > 0) {
-  document.getElementById("kohde").innerHTML += pariliset.join(', ');
-} else {
-  document.getElementById("kohde").innerHTML += "ei ole";
-}
