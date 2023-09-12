@@ -1,0 +1,77 @@
+body {
+  background-color: #f0f0f0;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+th {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em 1em;
+}
+
+.highlight {
+  background-color: gray;
+  font-weight: bold;
+  color: white;
+}
+dialog {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 2em 1em;
+  border-radius: 20px;
+  display: flex;
+  max-width: 800px;
+  max-height: 90vh;
+}
+dialog button {
+  width: 100px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.dialog-content {
+  margin-top: 0;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(2px);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+ul h2 {
+  font-size: 1em;
+}
+body:has(dialog[open]) {
+  overflow-y: hidden;
+}
+
+ul li {
+  min-width: 150px;
+  max-width: 200px;
+}
+form {
+  width: 70%;
+}
