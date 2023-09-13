@@ -1,19 +1,17 @@
 // Sample user data array
 const userArray = [
-  { name: "Alice", age: 25 },
-  { name: "Bob", },
-  { age: 30 },
-  { name: "Eve", age: null }
+  {name: 'Alice', age: 25},
+  {name: 'Bob'},
+  {age: 30},
+  {name: 'Eve', age: null},
 ];
 
-
 for (const user of userArray) {
-  const userData =`Welcome, ${user.name ?? 'Guest'}! You are ${
+  const userData = `Welcome, ${user.name ?? 'Guest'}! You are ${
     user.age ?? 18
   } years old.`;
   console.log(userData);
 }
-
 
 // The correct output should be:
 // Welcome, Alice! You are 25 years old.
