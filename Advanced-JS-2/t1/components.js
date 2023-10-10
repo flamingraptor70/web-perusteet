@@ -32,18 +32,26 @@ const restaurantModal = (restaurant, menu) => {
       <th>Price</th>
     </tr>
   `;
-  for (const course of menu.courses) {
-    const {diets, price} = course;
+  menu.courses.forEach(course => {
+    const {name, diets, price} = course;
     menuHtml += `
         <tr>
-          <td>${course.name}</td>
+          <td>${name}</td>
           <td>${diets || ' - '}</td>
           <td>${price || ' - '}</td>
         </tr>
         `;
-  }
+  });
   menuHtml += '</table>';
   return menuHtml;
 };
 
-export {restaurantRow, restaurantModal};
+const errorModal = message => {
+  const html = `
+    <h3>Error</h3>
+    <p>${message}</p>
+  `;
+  return html;
+};
+
+export {restaurantRow, restaurantModal, errorModal};

@@ -1,3 +1,5 @@
+'use strict';
+
 // Sample user data array
 const userArray = [
   {name: 'Alice', age: 25},
